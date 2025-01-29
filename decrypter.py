@@ -1,30 +1,29 @@
 import os
 import pyaes
-import secrets
 
-# Abrir o arquivo original
-file_name = "teste.txt"
-with open(file_name, "rb") as file:
-    file_data = file.read()
+# Nome do arquivo criptografado
+encrypted_file_name = "teste.txt.enc"
 
-# Gerar uma chave de 16 bytes (128 bits) e salvar em um arquivo
-key = secrets.token_bytes(16)
-with open("chave.key", "wb") as key_file:
-    key_file.write(key)
+# Ler a chave armazenada
+with open("chave.key", "rb") as key_file:
+    key = key_file.read()
 
-# Inicializar AES no modo CTR
+# Abrir o arquivo criptografado
+with open(encrypted_file_name, "rb") as file:
+    encrypted_data = file.read()
+
+# Inicializar AES no modo CTR para descriptografia
 aes = pyaes.AESModeOfOperationCTR(key)
 
-# Criptografar os dados
-crypto_data = aes.encrypt(file_data)
+# Descriptografar os dados
+decrypted_data = aes.decrypt(encrypted_data)
 
-# Remover o arquivo original
-os.remove(file_name)
+# Remover o arquivo criptografado
+os.remove(encrypted_file_name)
 
-# Criar o arquivo criptografado
-encrypted_file_name = f"{file_name}.enc"
-with open(encrypted_file_name, "wb") as new_file:
-    new_file.write(crypto_data)
+# Criar o arquivo descriptografado
+decrypted_file_name = "teste.txt"
+with open(decrypted_file_name, "wb") as new_file:
+    new_file.write(decrypted_data)
 
-print(f"Arquivo criptografado salvo como: {encrypted_file_name}")
-print(f"Chave de descriptografia salva em: chave.key")
+print(f"Arquivo descriptografado salvo como: {decrypted_file_name}")
