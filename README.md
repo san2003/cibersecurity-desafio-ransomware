@@ -1,16 +1,16 @@
-# 🛡️ Desafio Ransomware - Criptografia e Descriptografia AES
+#  Desafio Ransomware - Criptografia e Descriptografia AES
 
 Este projeto demonstra um sistema simples de criptografia e descriptografia de arquivos usando **AES (Advanced Encryption Standard)** no modo **CTR (Counter Mode)**. O código criptografa um arquivo de texto e gera uma chave secreta, que deve ser usada para descriptografar o arquivo posteriormente.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 - **Python 3**
 - **PyAES** (Biblioteca para criptografia AES)
 
 ---
 
-## 📦 Instalação
+##  Instalação
 1. **Clone este repositório:**
    ```sh
    git clone https://github.com/san2003/cibersecurity-desafio-ransomware.git
@@ -23,7 +23,7 @@ Este projeto demonstra um sistema simples de criptografia e descriptografia de a
 
 ---
 
-## 🔒 Como Funciona a Criptografia
+##  Como Funciona a Criptografia
 
 1. O script **`encrypt.py`**:
    - Lê o conteúdo do arquivo original (`teste.txt`).
@@ -41,7 +41,7 @@ Após a execução, o arquivo original será removido e um novo arquivo criptogr
 
 ---
 
-## 🔓 Como Funciona a Descriptografia
+##  Como Funciona a Descriptografia
 
 1. O script **`decrypt.py`**:
    - Lê a chave de descriptografia do arquivo `chave.key`.
@@ -59,14 +59,14 @@ Após a execução, o arquivo original será restaurado.
 
 ---
 
-## ⚠️ Importante
+##  Importante
 - **A chave de criptografia é essencial!** Sem o arquivo `chave.key`, não será possível recuperar o arquivo original.
 - **Não compartilhe a chave secreta**, pois qualquer pessoa com acesso a ela poderá descriptografar seus arquivos.
 - Este projeto é apenas para **fins educacionais** e não deve ser utilizado para atividades maliciosas.
 
 ---
 
-## 📜 Licença
+##  Licença
 Este projeto está licenciado sob a **MIT License**. Sinta-se à vontade para usá-lo e modificá-lo.
 
 ---
